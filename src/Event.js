@@ -1,9 +1,3 @@
-# Event
-观察者模式
-
-## 不超过 25 行的观察者模式
-
-```
 window.Event = (function() {
     function Event() {
         this._events = {};
@@ -29,4 +23,3 @@ window.Event = (function() {
     };
     return Event;
 })();
-```

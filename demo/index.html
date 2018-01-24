@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event demo</title>
+</head>
+<body>
+
+    <h1>Hello Event</h1>
+    
+    <script src="../src/Event.js"></script>
+    <script>
+    var event = new Event();
+
+    var exec = function(data) {
+        console.info('观察到的数据 ==>', data);
+    };
+
+    event.on('testEv', exec);
+
+    event.emit('testEv', {
+        code: 1,
+        message: 'ok'
+    });
+
+    event.remove('testEv', exec);
+
+    event.emit('testEv', {
+        code: 1,
+        message: 'ok'
+    });
+
+    event.removeAll('testEv');
+
+    </script>
+</body>
+</html>
